@@ -57,7 +57,7 @@ class SharedPtr {
     }
     return *this;
   };
-  /* проверка: указывает ли указатель на на объект */
+
   auto operator*() const -> T& { return *Pointer; };
 
   auto operator->() const -> T* { return Pointer; };
@@ -80,7 +80,7 @@ class SharedPtr {
     r = *this;
     *this = temp;
   };
-  /* возвращает количество объектов SharedPtr, которые ссылаются на тот же управляемый объект */
+
   auto use_count() const -> std::size_t { return *Counter; };
 };
 #endif  // INCLUDE_SHAREDPTR_HPP_
